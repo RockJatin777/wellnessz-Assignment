@@ -1,0 +1,55 @@
+POST http://localhost:6000/post-image/
+Content-Type: application/json
+
+{
+    "title": "jatin's post",
+    "desc": "at a lovely spot",
+    "tag": "img",
+    "image": "abc.img.png"
+}
+
+###
+
+GET http://localhost:6000/get-images/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aXRsZSI6ImphdGluJ3MgcG9zdCIsImlhdCI6MTcxNDY5Nzg0Nn0.9g-YaKXAGM4KsZqg_DyckCV95ejnFoie_hdPaGUg1Hw
+
+####
+
+GET http://localhost:6000/get-image/61ff34c1-18c4-4e59-bb8d-71ef054c403d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aXRsZSI6ImphdGluJ3MgcG9zdCIsImlhdCI6MTcxNDY5Nzg0Nn0.9g-YaKXAGM4KsZqg_DyckCV95ejnFoie_hdPaGUg1Hw
+
+###
+
+delete http://localhost:6000/image-delete/61ff34c1-18c4-4e59-bb8d-71ef054c403d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aXRsZSI6ImphdGluJ3MgcG9zdCIsImlhdCI6MTcxNDY5Nzg0Nn0.9g-YaKXAGM4KsZqg_DyckCV95ejnFoie_hdPaGUg1Hw
+
+
+####
+
+put http://localhost:6000/image-update/61ff34c1-18c4-4e59-bb8d-71ef054c403d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aXRsZSI6ImphdGluJ3MgcG9zdCIsImlhdCI6MTcxNDY5Nzg0Nn0.9g-YaKXAGM4KsZqg_DyckCV95ejnFoie_hdPaGUg1Hw
+
+Content-Type: application/json
+
+{
+    "title": "jatin's post",
+    "desc": "at a lovely spot",
+    "tag": "img",
+    "image": "abc.img.png"
+}
+
+###
+
+GET http://localhost:6000/?offset=0&limit=5&sort=asc&tag=img&keyword=j
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aXRsZSI6ImphdGluJ3MgcG9zdCIsImlhdCI6MTcxNDY5Nzg0Nn0.9g-YaKXAGM4KsZqg_DyckCV95ejnFoie_hdPaGUg1Hw
+
+####
+
+POST http://localhost:6000/image-on-cloudinary/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aXRsZSI6ImphdGluJ3MgcG9zdCIsImlhdCI6MTcxNDY5Nzg0Nn0.9g-YaKXAGM4KsZqg_DyckCV95ejnFoie_hdPaGUg1Hw
+
+Content-Type: application/json
+
+{
+    "image": "abc.img.png"
+}
